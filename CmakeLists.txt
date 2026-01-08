@@ -1,0 +1,9 @@
+cmake_minimum_required(VERSION 3.10)   # Require at least CMake 3.10
+set(CMAKE_C_COMPILER "C:/MinGW/bin/gcc.exe")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -pthread")
+project(MyProgram C)                   # Project name and language
+
+# Add the executable from your source files
+add_executable(uartServer main.c UART_Response_Builder.c UART_Response_Parser.c)
+# find_package(Threads REQUIRED)
+# target_link_libraries(your_target_name Threads::Threads)

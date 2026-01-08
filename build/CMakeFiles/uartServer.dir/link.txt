@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\uartServer.dir/objects.a
+C:\MinGW\bin\ar.exe qc CMakeFiles\uartServer.dir/objects.a @CMakeFiles\uartServer.dir\objects1.rsp
+C:\MinGW\bin\gcc.exe  -pthread -Wl,--whole-archive CMakeFiles\uartServer.dir/objects.a -Wl,--no-whole-archive -o uartServer.exe -Wl,--out-implib,libuartServer.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\uartServer.dir\linkLibs.rsp
