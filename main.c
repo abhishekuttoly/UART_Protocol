@@ -122,9 +122,7 @@ eErrorCode TransmitResponcePacket(_sPacketData *pucPacketData, HANDLE hPort)
     }
     else if(eHeader == SET_COMMAND)
     {
-        printf("set\n");
         eParamType eParam = pucPacketData->psTlv[0].psTlvParam.ucType;
-        printf("eparam = %d\n", pucPacketData->psTlv[0].psTlvParam.ucType);
         uint8_t ucValueBuffer[20];
         uint8_t ucValueType;
 
@@ -133,15 +131,10 @@ eErrorCode TransmitResponcePacket(_sPacketData *pucPacketData, HANDLE hPort)
 
         if(!SetParamValue(eParam, ucValueBuffer))
         {
-            printf("set fail\n");
             eError = SET_PARAMETER_ERROR;
-        }
-        else{
-            printf("set success\n");
         }
          
         CreateSetResponsePacket(eParam, ucValueBuffer);
-        printf("set %c",DEVICE_NAME_VALUE[1]);
         DWORD dwBytesWritten;;
         if(WriteFile(hPort, ucValueBuffer, sizeof(ucValueBuffer), &dwBytesWritten, NULL))
         {
@@ -204,11 +197,6 @@ uint8_t GetParamType(uint8_t ucParameter)
 
 bool SetParamValue(uint8_t ucParrameterId, uint8_t pucValueBuffer[])
 {
-    for(int i =0; i<3;i++)
-    {
-        printf("%c", pucValueBuffer[i]);
-    }
-    printf("\nparam = %d\n", ucParrameterId);
     bool bSetStatus = false;
     switch (ucParrameterId)
     {
@@ -218,12 +206,8 @@ bool SetParamValue(uint8_t ucParrameterId, uint8_t pucValueBuffer[])
         break;
     case 3:{
         uint8_t ucTemp[10];
-        printf("size of buffer %d  %d\n", strlen(pucValueBuffer), sizeof(pucValueBuffer));
-        printf("size of buffer %d  %d\n", strlen(DEVICE_NAME_VALUE), sizeof(DEVICE_NAME_VALUE));
-
         memcpy(ucTemp, DEVICE_NAME_VALUE, strlen(DEVICE_NAME_VALUE));
         memcpy(DEVICE_NAME_VALUE, pucValueBuffer, strlen(pucValueBuffer));
-printf("size of buffer %d  %d\n", strlen(DEVICE_NAME_VALUE), sizeof(DEVICE_NAME_VALUE));
         if(strcmp(DEVICE_NAME_VALUE, ucTemp) != 0)
         {
             bSetStatus = true;

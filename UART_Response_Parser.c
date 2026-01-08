@@ -48,7 +48,6 @@ bool ParsePacket(uint8_t ucUARTPacket[], _sPacketData *psData)
     {
         psData->ucNumberOfTLVs = 2;
     }
-    printf("tlv count = %d\n", psData->ucNumberOfTLVs);
 
 	uint8_t ucIndex = 2;
 	uint8_t ucCount = 0;
@@ -61,7 +60,6 @@ bool ParsePacket(uint8_t ucUARTPacket[], _sPacketData *psData)
         
 		psData->psTlv[ucCount].psTlvParam.ucLength = ucUARTPacket[ucIndex];
 		ucIndex++;
-        printf("num = %d, type = %d, len = %d\n", ucCount, psData->psTlv[ucCount].psTlvParam.ucType, psData->psTlv[ucCount].psTlvParam.ucLength);
 		if(psData->psTlv[ucCount].psTlvParam.ucLength == 0)
 		{
 			printf("ERROR: %d Invalid TLV Length\n", __LINE__);
@@ -92,14 +90,12 @@ uint8_t GetTLVCount(uint8_t ucUARTPacket[])
 	uint8_t ucCount = 0;
 	uint8_t ucIndex = 1;
 	uint8_t ucTotalLength = ucUARTPacket[ucIndex];
-    printf("get tlv total length = %d\n", ucTotalLength);
 	if( ucTotalLength !=0)
 	{
 		while(ucIndex < ucTotalLength + 2)
 		{
 			ucIndex ++;		// Since first element is tag
 			uint8_t ucLength = ucUARTPacket[ucIndex];
-            printf("length %d, index %d\n", ucLength, ucIndex);
 			if(ucLength == 0)
 			{
 				printf("ERROR: %d Invalid TLV Length\n", __LINE__);
