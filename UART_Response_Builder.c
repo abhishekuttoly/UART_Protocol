@@ -37,7 +37,7 @@
 //**********************************************************************************
 void CreateGetResponsePacket(_sResponseValue *psResponseValue, uint8_t ucNumberOfItems, uint8_t ucLengthOfResponseValue, uint8_t pucResponsePacket[])
 {
-    uint8_t ucIndex = 2; // Start after length bytes
+    uint8_t ucIndex = 2;            // Start after total length byte of the packet
     uint8_t ucCounter = 0;
     uint8_t ucTotalLength = 0;
 
@@ -45,8 +45,8 @@ void CreateGetResponsePacket(_sResponseValue *psResponseValue, uint8_t ucNumberO
     {
         _sTLVParams sTLVParam;
 
-        sTLVParam.ucType = 1;
-        sTLVParam.ucLength = 1;
+        sTLVParam.ucType = 3;       // parameter
+        sTLVParam.ucLength = 1;     // since parameter, length = 1 
         sTLVParam.ucValueBuffer[0] = psResponseValue->ucParamId;
         uint8_t ucLength = 0;
         ucLength = CreateTLV(&sTLVParam, pucResponsePacket+ucIndex);
@@ -81,7 +81,7 @@ void CreateSetResponsePacket(uint8_t ucParameterID, uint8_t pucResponsePacket[])
 {
     _sTLVParams sTLVParam;
 
-    sTLVParam.ucType = 1;   //param
+    sTLVParam.ucType = 3;   //parameter
     sTLVParam.ucLength = 1;
     sTLVParam.ucValueBuffer[0] = ucParameterID;
 

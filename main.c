@@ -6,8 +6,8 @@
 #include "UART_Response_Builder.h"
 #include "UART_Response_Parser.h"
 
-uint8_t VERSION_VALUE[] = "FW100";
-uint16_t DEVICE_ID_VALUE = 1000;
+uint8_t VERSION_VALUE[]     = "FW100";
+uint16_t DEVICE_ID_VALUE    = 1000;
 uint8_t DEVICE_NAME_VALUE[] = "PC";
 
 typedef enum _eErrorCode{
@@ -35,14 +35,14 @@ typedef enum _eType{
 }eType;
 
 uint8_t GetParamType(uint8_t ucParameter);
-bool SetParamValue(uint8_t ucParrameterId, uint8_t pucValueBuffer[]);
+bool SetParamValue(uint8_t ucParrameterId, uint8_t pucValueBuffer[], uint8_t ucParamLength);
 void GetParameterValue(uint8_t ucParameter, uint8_t pucValueBuffer[], uint8_t *ucParamType, uint8_t *ucLength);
 eErrorCode TransmitResponcePacket(_sPacketData *pucPacketData, HANDLE hPort);
 
 void *ServerThread(void *arg)
 {
     HANDLE hPort = (HANDLE)arg;
-    while (1)//testcode
+    while (1)
     {
         DWORD dwBytesRead;
         uint8_t readBuffer[100];
@@ -70,7 +70,6 @@ void *ServerThread(void *arg)
         }
     }
 }
-
 
 eErrorCode TransmitResponcePacket(_sPacketData *pucPacketData, HANDLE hPort)
 {
@@ -110,7 +109,7 @@ eErrorCode TransmitResponcePacket(_sPacketData *pucPacketData, HANDLE hPort)
 
         if(WriteFile(hPort, ucResponceBuffer, sizeof(ucResponceBuffer), &dwBytesWritten, NULL))
         {
-            printf("Transmitting data:\n");
+            printf("Transmitted data:\n");
 
             for (DWORD i = 0; i < ucResponceBuffer[1]+2; i++)
             {
@@ -129,7 +128,7 @@ eErrorCode TransmitResponcePacket(_sPacketData *pucPacketData, HANDLE hPort)
         memcpy(ucValueBuffer, pucPacketData->psTlv[1].psTlvParam.ucValueBuffer, pucPacketData->psTlv[1].psTlvParam.ucLength);
         ucValueType = pucPacketData->psTlv[1].psTlvParam.ucType;
 
-        if(!SetParamValue(eParam, ucValueBuffer))
+        if(!SetParamValue(eParam, ucValueBuffer, pucPacketData->psTlv[1].psTlvParam.ucLength))
         {
             eError = SET_PARAMETER_ERROR;
         }
@@ -195,7 +194,7 @@ uint8_t GetParamType(uint8_t ucParameter)
 	return ucParamType;
 }
 
-bool SetParamValue(uint8_t ucParrameterId, uint8_t pucValueBuffer[])
+bool SetParamValue(uint8_t ucParrameterId, uint8_t pucValueBuffer[], uint8_t ucParamLength)
 {
     bool bSetStatus = false;
     switch (ucParrameterId)
@@ -207,7 +206,8 @@ bool SetParamValue(uint8_t ucParrameterId, uint8_t pucValueBuffer[])
     case 3:{
         uint8_t ucTemp[10];
         memcpy(ucTemp, DEVICE_NAME_VALUE, strlen(DEVICE_NAME_VALUE));
-        memcpy(DEVICE_NAME_VALUE, pucValueBuffer, strlen(pucValueBuffer));
+        memset(DEVICE_NAME_VALUE, 0, strlen(DEVICE_NAME_VALUE));
+        memcpy(DEVICE_NAME_VALUE, pucValueBuffer, ucParamLength);
         if(strcmp(DEVICE_NAME_VALUE, ucTemp) != 0)
         {
             bSetStatus = true;
@@ -218,10 +218,6 @@ bool SetParamValue(uint8_t ucParrameterId, uint8_t pucValueBuffer[])
         break;
     }
 
-    for(int i =0; i<3;i++)
-    {
-        printf("%c", DEVICE_NAME_VALUE[i]);
-    }
     return bSetStatus;
 }
 
@@ -244,10 +240,10 @@ int main()
         return 1;
     }
 
-    dcbSerialPorts.BaudRate = CBR_9600; //  baud rate
-    dcbSerialPorts.ByteSize = 8;        // 8 data bits
-    dcbSerialPorts.Parity = NOPARITY;   // No parity
-    dcbSerialPorts.StopBits = ONESTOPBIT; // 1 stop bit
+    dcbSerialPorts.BaudRate = CBR_9600;     //  baud rate
+    dcbSerialPorts.ByteSize = 8;            // 8 data bits
+    dcbSerialPorts.Parity = NOPARITY;       // No parity
+    dcbSerialPorts.StopBits = ONESTOPBIT;   // 1 stop bit
 
     if(!SetCommState(hPort, &dcbSerialPorts))
     {

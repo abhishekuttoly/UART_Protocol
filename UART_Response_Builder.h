@@ -17,6 +17,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <stdio.h>
+#include <string.h>
 //******************************* Global Types ******************************** 
  
 //***************************** Global Constants ****************************** 
@@ -33,7 +34,6 @@ typedef struct __sTLVParams{
 	uint8_t ucLength; 
 	uint8_t ucValueBuffer[10];
 	} _sTLVParams;
-
 
 //**************************** Forward Declarations *************************** 
 

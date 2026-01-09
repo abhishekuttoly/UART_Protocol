@@ -28,11 +28,9 @@
 
 //***************************** Function Definitions ******************************
 //******************************.FUNCTION_HEADER.****************************** 
-//Purpose :
-//Inputs  : 
-//Inputs  : 
-//Inputs  : 
-//Outputs : None 
+//Purpose : To parse packet 
+//Inputs  : ucUARTPacket - Received UART packet
+//Outputs : psData - structure holding parsed data 
 //Return  : true if successful, false otherwise 
 //**********************************************************************************
 bool ParsePacket(uint8_t ucUARTPacket[], _sPacketData *psData)
@@ -85,6 +83,11 @@ bool ParsePacket(uint8_t ucUARTPacket[], _sPacketData *psData)
 	return true;
 }
 
+//******************************.FUNCTION_HEADER.****************************** 
+//Purpose : To get TLV count 
+//Inputs  : ucUARTPacket - Received UART packet
+//Return  : none
+//
 uint8_t GetTLVCount(uint8_t ucUARTPacket[])
 {
 	uint8_t ucCount = 0;
@@ -123,6 +126,12 @@ uint8_t GetTLVCount(uint8_t ucUARTPacket[])
 	return ucCount;
 }
 
+//******************************.FUNCTION_HEADER.****************************** 
+//Purpose : To parse TLV 
+//Inputs  : psTLVBuffer - Structure holding TLV data
+//Outputs : psTLVData - structure holding parsed TLV data 
+//Return  : None 
+//
 void ParseTLV(uint8_t *psTLVBuffer, _sTLVParams *psTLVData)
 {
 	uint8_t ucIndex = 0;

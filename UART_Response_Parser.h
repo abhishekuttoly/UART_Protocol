@@ -17,6 +17,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <stdio.h>
+#include <string.h>
 
 #include "UART_Response_Builder.h"
 //******************************* Global Types ******************************** 
