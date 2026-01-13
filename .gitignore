@@ -1,0 +1,6 @@
+build/CMakeFiles/
+build/cmake_install.cmake
+build/Makefile
+build/uartServer.exe
+build/CMakeCache.txt
+build/.test,txt,swp

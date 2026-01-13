@@ -3,7 +3,17 @@ set(CMAKE_C_COMPILER "C:/MinGW/bin/gcc.exe")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -pthread")
 project(MyProgram C)                   # Project name and language
 
+include_directories(
+    ${CMAKE_SOURCE_DIR}/Common/Include
+    ${CMAKE_SOURCE_DIR}/Common/Log/Include
+    ${CMAKE_SOURCE_DIR}/Uart/Include
+)
+
+set(SOURCES
+    Common/Source/UART_Packet_Builder.c
+    Common/Source/UART_Packet_Parser.c
+    Common/Log/Source/Log.c
+    Uart/Source/UART_Communication.c
+)
 # Add the executable from your source files
-add_executable(uartServer main.c UART_Response_Builder.c UART_Response_Parser.c)
-# find_package(Threads REQUIRED)
-# target_link_libraries(your_target_name Threads::Threads)
+add_executable(uartServer main.c ${SOURCES})

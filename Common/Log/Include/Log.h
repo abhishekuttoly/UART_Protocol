@@ -1,45 +1,37 @@
-//**************************** UART_RESPONSE_PARSER *****************************
+//**************************** LOG *****************************
 //  Copyright (c) 2026 
 //  All Rights Reserved 
 //***************************************************************************** 
 // 
-// File		: UART_Response_Parser.h
+// File		: Log.h
 // Summary	: This configurations header file contains structure and function declarations
-//		       for UART Response Parser functions
+//		       for log functions
 // Note		: None
 // Author	: Abhishek
-// Date		: 01-01-2026
+// Date		: 13-01-2026
 // 
 //***************************************************************************** 
-#ifndef _UART_RESPONSE_PARSER_H_ 
-#define _UART_RESPONSE_PARSER_H_
+#ifndef _LOG_H_ 
+#define _LOG_H_
 //******************************* Include Files ******************************* 
 #include <stdbool.h>
 #include <stdint.h>
 #include <stdio.h>
 #include <string.h>
-
-#include "UART_Response_Builder.h"
 //******************************* Global Types ******************************** 
  
 //***************************** Global Constants ****************************** 
- 
-//***************************** Global Structure ******************************
-typedef struct __sTLV{
-	uint8_t	ucTLVNumber;		// count of value
-	_sTLVParams psTlvParam;		// TLV data holding structure
-	} _sTLV;
+#define UART_GET_COMMAND 1
 
-typedef struct __sPacketData{
-	uint8_t ucRequestType;			// TLV header
-	uint8_t ucLength;				// Length of TLV buffer
-	uint8_t ucNumberOfTLVs;			// Number of TLVs
-	_sTLV psTlv[];		// structure holding multiple TLV data
-	} _sPacketData;
+//***************************** Global Structure ******************************
+typedef enum __eLogLevel{
+    LOG_LEVEL_ERROR = 1,
+    LOG_LEVEL_WARNING,
+    LOG_LEVEL_INFO,
+    LOG_LEVEL_DEBUG
+}_eLogLevel;
+
 //**************************** Forward Declarations *************************** 
-bool ParsePacket(uint8_t ucUARTPacket[], _sPacketData *psData);
-uint8_t GetTLVCount(uint8_t ucUARTPacket[]);
-void ParseTLV(uint8_t *psTLVBuffer, _sTLVParams *psTLVData);
 //***************************** Function Declaration **************************
-#endif // _UART_RESPONSE_PARSER_H_ 
-// EOF
+void LOGGER(_eLogLevel eLogLevel, uint8_t ucFileNameBuffer[], uint16_t unLineNumber, uint8_t ucLogBuffer[]);
+#endif // _LOG_H_

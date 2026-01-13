@@ -72,6 +72,7 @@ CMakeFiles/uartServer.dir/codegen:
 .PHONY : CMakeFiles/uartServer.dir/codegen
 
 CMakeFiles/uartServer.dir/main.c.obj: CMakeFiles/uartServer.dir/flags.make
+CMakeFiles/uartServer.dir/main.c.obj: CMakeFiles/uartServer.dir/includes_C.rsp
 CMakeFiles/uartServer.dir/main.c.obj: C:/Users/1425/CProjects/UART_Server/main.c
 CMakeFiles/uartServer.dir/main.c.obj: CMakeFiles/uartServer.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\1425\CProjects\UART_Server\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/uartServer.dir/main.c.obj"
@@ -85,51 +86,87 @@ CMakeFiles/uartServer.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/uartServer.dir/main.c.s"
 	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\1425\CProjects\UART_Server\main.c -o CMakeFiles\uartServer.dir\main.c.s
 
-CMakeFiles/uartServer.dir/UART_Response_Builder.c.obj: CMakeFiles/uartServer.dir/flags.make
-CMakeFiles/uartServer.dir/UART_Response_Builder.c.obj: C:/Users/1425/CProjects/UART_Server/UART_Response_Builder.c
-CMakeFiles/uartServer.dir/UART_Response_Builder.c.obj: CMakeFiles/uartServer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\1425\CProjects\UART_Server\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/uartServer.dir/UART_Response_Builder.c.obj"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/uartServer.dir/UART_Response_Builder.c.obj -MF CMakeFiles\uartServer.dir\UART_Response_Builder.c.obj.d -o CMakeFiles\uartServer.dir\UART_Response_Builder.c.obj -c C:\Users\1425\CProjects\UART_Server\UART_Response_Builder.c
+CMakeFiles/uartServer.dir/Common/Source/UART_Packet_Builder.c.obj: CMakeFiles/uartServer.dir/flags.make
+CMakeFiles/uartServer.dir/Common/Source/UART_Packet_Builder.c.obj: CMakeFiles/uartServer.dir/includes_C.rsp
+CMakeFiles/uartServer.dir/Common/Source/UART_Packet_Builder.c.obj: C:/Users/1425/CProjects/UART_Server/Common/Source/UART_Packet_Builder.c
+CMakeFiles/uartServer.dir/Common/Source/UART_Packet_Builder.c.obj: CMakeFiles/uartServer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\1425\CProjects\UART_Server\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/uartServer.dir/Common/Source/UART_Packet_Builder.c.obj"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/uartServer.dir/Common/Source/UART_Packet_Builder.c.obj -MF CMakeFiles\uartServer.dir\Common\Source\UART_Packet_Builder.c.obj.d -o CMakeFiles\uartServer.dir\Common\Source\UART_Packet_Builder.c.obj -c C:\Users\1425\CProjects\UART_Server\Common\Source\UART_Packet_Builder.c
 
-CMakeFiles/uartServer.dir/UART_Response_Builder.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/uartServer.dir/UART_Response_Builder.c.i"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\1425\CProjects\UART_Server\UART_Response_Builder.c > CMakeFiles\uartServer.dir\UART_Response_Builder.c.i
+CMakeFiles/uartServer.dir/Common/Source/UART_Packet_Builder.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/uartServer.dir/Common/Source/UART_Packet_Builder.c.i"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\1425\CProjects\UART_Server\Common\Source\UART_Packet_Builder.c > CMakeFiles\uartServer.dir\Common\Source\UART_Packet_Builder.c.i
 
-CMakeFiles/uartServer.dir/UART_Response_Builder.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/uartServer.dir/UART_Response_Builder.c.s"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\1425\CProjects\UART_Server\UART_Response_Builder.c -o CMakeFiles\uartServer.dir\UART_Response_Builder.c.s
+CMakeFiles/uartServer.dir/Common/Source/UART_Packet_Builder.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/uartServer.dir/Common/Source/UART_Packet_Builder.c.s"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\1425\CProjects\UART_Server\Common\Source\UART_Packet_Builder.c -o CMakeFiles\uartServer.dir\Common\Source\UART_Packet_Builder.c.s
 
-CMakeFiles/uartServer.dir/UART_Response_Parser.c.obj: CMakeFiles/uartServer.dir/flags.make
-CMakeFiles/uartServer.dir/UART_Response_Parser.c.obj: C:/Users/1425/CProjects/UART_Server/UART_Response_Parser.c
-CMakeFiles/uartServer.dir/UART_Response_Parser.c.obj: CMakeFiles/uartServer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\1425\CProjects\UART_Server\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/uartServer.dir/UART_Response_Parser.c.obj"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/uartServer.dir/UART_Response_Parser.c.obj -MF CMakeFiles\uartServer.dir\UART_Response_Parser.c.obj.d -o CMakeFiles\uartServer.dir\UART_Response_Parser.c.obj -c C:\Users\1425\CProjects\UART_Server\UART_Response_Parser.c
+CMakeFiles/uartServer.dir/Common/Source/UART_Packet_Parser.c.obj: CMakeFiles/uartServer.dir/flags.make
+CMakeFiles/uartServer.dir/Common/Source/UART_Packet_Parser.c.obj: CMakeFiles/uartServer.dir/includes_C.rsp
+CMakeFiles/uartServer.dir/Common/Source/UART_Packet_Parser.c.obj: C:/Users/1425/CProjects/UART_Server/Common/Source/UART_Packet_Parser.c
+CMakeFiles/uartServer.dir/Common/Source/UART_Packet_Parser.c.obj: CMakeFiles/uartServer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\1425\CProjects\UART_Server\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/uartServer.dir/Common/Source/UART_Packet_Parser.c.obj"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/uartServer.dir/Common/Source/UART_Packet_Parser.c.obj -MF CMakeFiles\uartServer.dir\Common\Source\UART_Packet_Parser.c.obj.d -o CMakeFiles\uartServer.dir\Common\Source\UART_Packet_Parser.c.obj -c C:\Users\1425\CProjects\UART_Server\Common\Source\UART_Packet_Parser.c
 
-CMakeFiles/uartServer.dir/UART_Response_Parser.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/uartServer.dir/UART_Response_Parser.c.i"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\1425\CProjects\UART_Server\UART_Response_Parser.c > CMakeFiles\uartServer.dir\UART_Response_Parser.c.i
+CMakeFiles/uartServer.dir/Common/Source/UART_Packet_Parser.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/uartServer.dir/Common/Source/UART_Packet_Parser.c.i"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\1425\CProjects\UART_Server\Common\Source\UART_Packet_Parser.c > CMakeFiles\uartServer.dir\Common\Source\UART_Packet_Parser.c.i
 
-CMakeFiles/uartServer.dir/UART_Response_Parser.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/uartServer.dir/UART_Response_Parser.c.s"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\1425\CProjects\UART_Server\UART_Response_Parser.c -o CMakeFiles\uartServer.dir\UART_Response_Parser.c.s
+CMakeFiles/uartServer.dir/Common/Source/UART_Packet_Parser.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/uartServer.dir/Common/Source/UART_Packet_Parser.c.s"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\1425\CProjects\UART_Server\Common\Source\UART_Packet_Parser.c -o CMakeFiles\uartServer.dir\Common\Source\UART_Packet_Parser.c.s
+
+CMakeFiles/uartServer.dir/Common/Log/Source/Log.c.obj: CMakeFiles/uartServer.dir/flags.make
+CMakeFiles/uartServer.dir/Common/Log/Source/Log.c.obj: CMakeFiles/uartServer.dir/includes_C.rsp
+CMakeFiles/uartServer.dir/Common/Log/Source/Log.c.obj: C:/Users/1425/CProjects/UART_Server/Common/Log/Source/Log.c
+CMakeFiles/uartServer.dir/Common/Log/Source/Log.c.obj: CMakeFiles/uartServer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\1425\CProjects\UART_Server\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/uartServer.dir/Common/Log/Source/Log.c.obj"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/uartServer.dir/Common/Log/Source/Log.c.obj -MF CMakeFiles\uartServer.dir\Common\Log\Source\Log.c.obj.d -o CMakeFiles\uartServer.dir\Common\Log\Source\Log.c.obj -c C:\Users\1425\CProjects\UART_Server\Common\Log\Source\Log.c
+
+CMakeFiles/uartServer.dir/Common/Log/Source/Log.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/uartServer.dir/Common/Log/Source/Log.c.i"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\1425\CProjects\UART_Server\Common\Log\Source\Log.c > CMakeFiles\uartServer.dir\Common\Log\Source\Log.c.i
+
+CMakeFiles/uartServer.dir/Common/Log/Source/Log.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/uartServer.dir/Common/Log/Source/Log.c.s"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\1425\CProjects\UART_Server\Common\Log\Source\Log.c -o CMakeFiles\uartServer.dir\Common\Log\Source\Log.c.s
+
+CMakeFiles/uartServer.dir/Uart/Source/UART_Communication.c.obj: CMakeFiles/uartServer.dir/flags.make
+CMakeFiles/uartServer.dir/Uart/Source/UART_Communication.c.obj: CMakeFiles/uartServer.dir/includes_C.rsp
+CMakeFiles/uartServer.dir/Uart/Source/UART_Communication.c.obj: C:/Users/1425/CProjects/UART_Server/Uart/Source/UART_Communication.c
+CMakeFiles/uartServer.dir/Uart/Source/UART_Communication.c.obj: CMakeFiles/uartServer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\1425\CProjects\UART_Server\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/uartServer.dir/Uart/Source/UART_Communication.c.obj"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/uartServer.dir/Uart/Source/UART_Communication.c.obj -MF CMakeFiles\uartServer.dir\Uart\Source\UART_Communication.c.obj.d -o CMakeFiles\uartServer.dir\Uart\Source\UART_Communication.c.obj -c C:\Users\1425\CProjects\UART_Server\Uart\Source\UART_Communication.c
+
+CMakeFiles/uartServer.dir/Uart/Source/UART_Communication.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/uartServer.dir/Uart/Source/UART_Communication.c.i"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\1425\CProjects\UART_Server\Uart\Source\UART_Communication.c > CMakeFiles\uartServer.dir\Uart\Source\UART_Communication.c.i
+
+CMakeFiles/uartServer.dir/Uart/Source/UART_Communication.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/uartServer.dir/Uart/Source/UART_Communication.c.s"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\1425\CProjects\UART_Server\Uart\Source\UART_Communication.c -o CMakeFiles\uartServer.dir\Uart\Source\UART_Communication.c.s
 
 # Object files for target uartServer
 uartServer_OBJECTS = \
 "CMakeFiles/uartServer.dir/main.c.obj" \
-"CMakeFiles/uartServer.dir/UART_Response_Builder.c.obj" \
-"CMakeFiles/uartServer.dir/UART_Response_Parser.c.obj"
+"CMakeFiles/uartServer.dir/Common/Source/UART_Packet_Builder.c.obj" \
+"CMakeFiles/uartServer.dir/Common/Source/UART_Packet_Parser.c.obj" \
+"CMakeFiles/uartServer.dir/Common/Log/Source/Log.c.obj" \
+"CMakeFiles/uartServer.dir/Uart/Source/UART_Communication.c.obj"
 
 # External object files for target uartServer
 uartServer_EXTERNAL_OBJECTS =
 
 uartServer.exe: CMakeFiles/uartServer.dir/main.c.obj
-uartServer.exe: CMakeFiles/uartServer.dir/UART_Response_Builder.c.obj
-uartServer.exe: CMakeFiles/uartServer.dir/UART_Response_Parser.c.obj
+uartServer.exe: CMakeFiles/uartServer.dir/Common/Source/UART_Packet_Builder.c.obj
+uartServer.exe: CMakeFiles/uartServer.dir/Common/Source/UART_Packet_Parser.c.obj
+uartServer.exe: CMakeFiles/uartServer.dir/Common/Log/Source/Log.c.obj
+uartServer.exe: CMakeFiles/uartServer.dir/Uart/Source/UART_Communication.c.obj
 uartServer.exe: CMakeFiles/uartServer.dir/build.make
 uartServer.exe: CMakeFiles/uartServer.dir/linkLibs.rsp
 uartServer.exe: CMakeFiles/uartServer.dir/objects1.rsp
 uartServer.exe: CMakeFiles/uartServer.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\1425\CProjects\UART_Server\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable uartServer.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\1425\CProjects\UART_Server\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable uartServer.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\uartServer.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

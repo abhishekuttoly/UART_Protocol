@@ -84,12 +84,12 @@ clean: CMakeFiles/uartServer.dir/clean
 CMakeFiles/uartServer.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\uartServer.dir\build.make CMakeFiles/uartServer.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\uartServer.dir\build.make CMakeFiles/uartServer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\1425\CProjects\UART_Server\build\CMakeFiles --progress-num=1,2,3,4 "Built target uartServer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\1425\CProjects\UART_Server\build\CMakeFiles --progress-num=1,2,3,4,5,6 "Built target uartServer"
 .PHONY : CMakeFiles/uartServer.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/uartServer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\1425\CProjects\UART_Server\build\CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\1425\CProjects\UART_Server\build\CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/uartServer.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\1425\CProjects\UART_Server\build\CMakeFiles 0
 .PHONY : CMakeFiles/uartServer.dir/rule
@@ -101,7 +101,7 @@ uartServer: CMakeFiles/uartServer.dir/rule
 # codegen rule for target.
 CMakeFiles/uartServer.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\uartServer.dir\build.make CMakeFiles/uartServer.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\1425\CProjects\UART_Server\build\CMakeFiles --progress-num=1,2,3,4 "Finished codegen for target uartServer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\1425\CProjects\UART_Server\build\CMakeFiles --progress-num=1,2,3,4,5,6 "Finished codegen for target uartServer"
 .PHONY : CMakeFiles/uartServer.dir/codegen
 
 # clean rule for target.

@@ -35,11 +35,12 @@ CMakeFiles/uartServer.dir/main.c.obj: \
  c:\mingw\include\objidl.h c:\mingw\include\cguid.h \
  c:\mingw\include\olectlid.h c:\mingw\include\oleauto.h \
  c:\mingw\include\oaidl.h c:\mingw\include\oleidl.h \
- c:\mingw\include\pthread.h c:\mingw\include\_ptw32.h \
- c:\mingw\include\time.h c:\mingw\include\sys\types.h \
- c:\mingw\include\sched.h \
- C:\Users\1425\CProjects\UART_Server\UART_Response_Builder.h \
+ C:/Users/1425/CProjects/UART_Server/Uart/Include/UART_Communication.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\stdbool.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\stdint.h \
- c:\mingw\include\stdint.h \
- C:\Users\1425\CProjects\UART_Server\UART_Response_Parser.h
+ c:\mingw\include\stdint.h c:\mingw\include\time.h \
+ c:\mingw\include\sys\types.h \
+ C:/Users/1425/CProjects/UART_Server/Common/Include/UART_Packet_Parser.h \
+ C:/Users/1425/CProjects/UART_Server/Common/Include/UART_Packet_Builder.h \
+ C:/Users/1425/CProjects/UART_Server/Common/Log/Include/Log.h \
+ C:/Users/1425/CProjects/UART_Server/Common/Include/UART_Packet_Builder.h

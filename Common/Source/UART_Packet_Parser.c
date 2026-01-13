@@ -12,8 +12,8 @@
 //*********************************************************************************
 
 //******************************* Include Files ***********************************
-#include "UART_Response_Parser.h"
-#include "UART_Response_Builder.h"
+#include "UART_Packet_Parser.h"
+#include "UART_Packet_Builder.h"
 //******************************* Local Types *************************************
 
 //***************************** Local Constants ***********************************
@@ -33,14 +33,14 @@
 //Outputs : psData - structure holding parsed data 
 //Return  : true if successful, false otherwise 
 //**********************************************************************************
-bool ParsePacket(uint8_t ucUARTPacket[], _sPacketData *psData)
+bool UARTPacketParserParsePacket(uint8_t ucUARTPacket[], _sPacketData *psData)
 {
 	psData->ucRequestType = ucUARTPacket[0];
 	psData->ucLength = ucUARTPacket[1];
 
     if(psData->ucRequestType == 1)
     {
-	    psData->ucNumberOfTLVs = GetTLVCount(ucUARTPacket);
+	    psData->ucNumberOfTLVs = UARTPacketParserGetTLVCount(ucUARTPacket);
     }
     else if(psData->ucRequestType == 2)
     {
@@ -60,7 +60,7 @@ bool ParsePacket(uint8_t ucUARTPacket[], _sPacketData *psData)
 		ucIndex++;
 		if(psData->psTlv[ucCount].psTlvParam.ucLength == 0)
 		{
-			printf("ERROR: %d Invalid TLV Length\n", __LINE__);
+			LOGGER(LOG_LEVEL_ERROR, __FILE__, __LINE__, "Invalid TLV Length");
 			return false;
 		}
 		else
@@ -80,51 +80,49 @@ bool ParsePacket(uint8_t ucUARTPacket[], _sPacketData *psData)
 
 		ucCount++;
 	}
+
 	return true;
 }
 
 //******************************.FUNCTION_HEADER.****************************** 
-//Purpose : To get TLV count 
+//Purpose : To get TLV count in buffer 
 //Inputs  : ucUARTPacket - Received UART packet
-//Return  : none
-//
-uint8_t GetTLVCount(uint8_t ucUARTPacket[])
+//Outputs : None
+//Return  : Number of TLVs 
+//**********************************************************************************
+uint8_t UARTPacketParserGetTLVCount(uint8_t ucUARTPacket[])
 {
 	uint8_t ucCount = 0;
-	uint8_t ucIndex = 1;
-	uint8_t ucTotalLength = ucUARTPacket[ucIndex];
+	uint8_t ucIndex = 2;
+
+	uint8_t ucTotalLength = ucUARTPacket[1];
+
 	if( ucTotalLength !=0)
 	{
 		while(ucIndex < ucTotalLength + 2)
 		{
-			ucIndex ++;		// Since first element is tag
+			ucIndex++;		// Since first element is tag
 			uint8_t ucLength = ucUARTPacket[ucIndex];
 			if(ucLength == 0)
 			{
-				printf("ERROR: %d Invalid TLV Length\n", __LINE__);
 				return 0;		// Invalid TLV
 			}
 			else
 			{
-				ucIndex += ucLength;
-			}
+				ucIndex += ucLength+1;
 
-            ucCount ++;
-
-			if(ucIndex > ucTotalLength+2)
-			{
-				return ucCount;	
 			}
+			ucCount ++;
 		}
 	}
 	else
 	{
-		printf("ERROR: %d Invalid TLV packet\n", __LINE__);
 		return 0;	// Invalid TLV
 	}
 
 	return ucCount;
 }
+
 
 //******************************.FUNCTION_HEADER.****************************** 
 //Purpose : To parse TLV 
@@ -132,7 +130,7 @@ uint8_t GetTLVCount(uint8_t ucUARTPacket[])
 //Outputs : psTLVData - structure holding parsed TLV data 
 //Return  : None 
 //
-void ParseTLV(uint8_t *psTLVBuffer, _sTLVParams *psTLVData)
+void UARTPacketParserParseTLV(uint8_t *psTLVBuffer, _sTLVParams *psTLVData)
 {
 	uint8_t ucIndex = 0;
 	psTLVData->ucType = psTLVBuffer[ucIndex];

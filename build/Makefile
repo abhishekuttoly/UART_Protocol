@@ -128,53 +128,101 @@ uartServer/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\uartServer.dir\build.make CMakeFiles/uartServer.dir/build
 .PHONY : uartServer/fast
 
-UART_Response_Builder.obj: UART_Response_Builder.c.obj
-.PHONY : UART_Response_Builder.obj
+Common/Log/Source/Log.obj: Common/Log/Source/Log.c.obj
+.PHONY : Common/Log/Source/Log.obj
 
 # target to build an object file
-UART_Response_Builder.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\uartServer.dir\build.make CMakeFiles/uartServer.dir/UART_Response_Builder.c.obj
-.PHONY : UART_Response_Builder.c.obj
+Common/Log/Source/Log.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\uartServer.dir\build.make CMakeFiles/uartServer.dir/Common/Log/Source/Log.c.obj
+.PHONY : Common/Log/Source/Log.c.obj
 
-UART_Response_Builder.i: UART_Response_Builder.c.i
-.PHONY : UART_Response_Builder.i
+Common/Log/Source/Log.i: Common/Log/Source/Log.c.i
+.PHONY : Common/Log/Source/Log.i
 
 # target to preprocess a source file
-UART_Response_Builder.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\uartServer.dir\build.make CMakeFiles/uartServer.dir/UART_Response_Builder.c.i
-.PHONY : UART_Response_Builder.c.i
+Common/Log/Source/Log.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\uartServer.dir\build.make CMakeFiles/uartServer.dir/Common/Log/Source/Log.c.i
+.PHONY : Common/Log/Source/Log.c.i
 
-UART_Response_Builder.s: UART_Response_Builder.c.s
-.PHONY : UART_Response_Builder.s
+Common/Log/Source/Log.s: Common/Log/Source/Log.c.s
+.PHONY : Common/Log/Source/Log.s
 
 # target to generate assembly for a file
-UART_Response_Builder.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\uartServer.dir\build.make CMakeFiles/uartServer.dir/UART_Response_Builder.c.s
-.PHONY : UART_Response_Builder.c.s
+Common/Log/Source/Log.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\uartServer.dir\build.make CMakeFiles/uartServer.dir/Common/Log/Source/Log.c.s
+.PHONY : Common/Log/Source/Log.c.s
 
-UART_Response_Parser.obj: UART_Response_Parser.c.obj
-.PHONY : UART_Response_Parser.obj
+Common/Source/UART_Packet_Builder.obj: Common/Source/UART_Packet_Builder.c.obj
+.PHONY : Common/Source/UART_Packet_Builder.obj
 
 # target to build an object file
-UART_Response_Parser.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\uartServer.dir\build.make CMakeFiles/uartServer.dir/UART_Response_Parser.c.obj
-.PHONY : UART_Response_Parser.c.obj
+Common/Source/UART_Packet_Builder.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\uartServer.dir\build.make CMakeFiles/uartServer.dir/Common/Source/UART_Packet_Builder.c.obj
+.PHONY : Common/Source/UART_Packet_Builder.c.obj
 
-UART_Response_Parser.i: UART_Response_Parser.c.i
-.PHONY : UART_Response_Parser.i
+Common/Source/UART_Packet_Builder.i: Common/Source/UART_Packet_Builder.c.i
+.PHONY : Common/Source/UART_Packet_Builder.i
 
 # target to preprocess a source file
-UART_Response_Parser.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\uartServer.dir\build.make CMakeFiles/uartServer.dir/UART_Response_Parser.c.i
-.PHONY : UART_Response_Parser.c.i
+Common/Source/UART_Packet_Builder.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\uartServer.dir\build.make CMakeFiles/uartServer.dir/Common/Source/UART_Packet_Builder.c.i
+.PHONY : Common/Source/UART_Packet_Builder.c.i
 
-UART_Response_Parser.s: UART_Response_Parser.c.s
-.PHONY : UART_Response_Parser.s
+Common/Source/UART_Packet_Builder.s: Common/Source/UART_Packet_Builder.c.s
+.PHONY : Common/Source/UART_Packet_Builder.s
 
 # target to generate assembly for a file
-UART_Response_Parser.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\uartServer.dir\build.make CMakeFiles/uartServer.dir/UART_Response_Parser.c.s
-.PHONY : UART_Response_Parser.c.s
+Common/Source/UART_Packet_Builder.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\uartServer.dir\build.make CMakeFiles/uartServer.dir/Common/Source/UART_Packet_Builder.c.s
+.PHONY : Common/Source/UART_Packet_Builder.c.s
+
+Common/Source/UART_Packet_Parser.obj: Common/Source/UART_Packet_Parser.c.obj
+.PHONY : Common/Source/UART_Packet_Parser.obj
+
+# target to build an object file
+Common/Source/UART_Packet_Parser.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\uartServer.dir\build.make CMakeFiles/uartServer.dir/Common/Source/UART_Packet_Parser.c.obj
+.PHONY : Common/Source/UART_Packet_Parser.c.obj
+
+Common/Source/UART_Packet_Parser.i: Common/Source/UART_Packet_Parser.c.i
+.PHONY : Common/Source/UART_Packet_Parser.i
+
+# target to preprocess a source file
+Common/Source/UART_Packet_Parser.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\uartServer.dir\build.make CMakeFiles/uartServer.dir/Common/Source/UART_Packet_Parser.c.i
+.PHONY : Common/Source/UART_Packet_Parser.c.i
+
+Common/Source/UART_Packet_Parser.s: Common/Source/UART_Packet_Parser.c.s
+.PHONY : Common/Source/UART_Packet_Parser.s
+
+# target to generate assembly for a file
+Common/Source/UART_Packet_Parser.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\uartServer.dir\build.make CMakeFiles/uartServer.dir/Common/Source/UART_Packet_Parser.c.s
+.PHONY : Common/Source/UART_Packet_Parser.c.s
+
+Uart/Source/UART_Communication.obj: Uart/Source/UART_Communication.c.obj
+.PHONY : Uart/Source/UART_Communication.obj
+
+# target to build an object file
+Uart/Source/UART_Communication.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\uartServer.dir\build.make CMakeFiles/uartServer.dir/Uart/Source/UART_Communication.c.obj
+.PHONY : Uart/Source/UART_Communication.c.obj
+
+Uart/Source/UART_Communication.i: Uart/Source/UART_Communication.c.i
+.PHONY : Uart/Source/UART_Communication.i
+
+# target to preprocess a source file
+Uart/Source/UART_Communication.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\uartServer.dir\build.make CMakeFiles/uartServer.dir/Uart/Source/UART_Communication.c.i
+.PHONY : Uart/Source/UART_Communication.c.i
+
+Uart/Source/UART_Communication.s: Uart/Source/UART_Communication.c.s
+.PHONY : Uart/Source/UART_Communication.s
+
+# target to generate assembly for a file
+Uart/Source/UART_Communication.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\uartServer.dir\build.make CMakeFiles/uartServer.dir/Uart/Source/UART_Communication.c.s
+.PHONY : Uart/Source/UART_Communication.c.s
 
 main.obj: main.c.obj
 .PHONY : main.obj
@@ -209,12 +257,18 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... uartServer
-	@echo ... UART_Response_Builder.obj
-	@echo ... UART_Response_Builder.i
-	@echo ... UART_Response_Builder.s
-	@echo ... UART_Response_Parser.obj
-	@echo ... UART_Response_Parser.i
-	@echo ... UART_Response_Parser.s
+	@echo ... Common/Log/Source/Log.obj
+	@echo ... Common/Log/Source/Log.i
+	@echo ... Common/Log/Source/Log.s
+	@echo ... Common/Source/UART_Packet_Builder.obj
+	@echo ... Common/Source/UART_Packet_Builder.i
+	@echo ... Common/Source/UART_Packet_Builder.s
+	@echo ... Common/Source/UART_Packet_Parser.obj
+	@echo ... Common/Source/UART_Packet_Parser.i
+	@echo ... Common/Source/UART_Packet_Parser.s
+	@echo ... Uart/Source/UART_Communication.obj
+	@echo ... Uart/Source/UART_Communication.i
+	@echo ... Uart/Source/UART_Communication.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
